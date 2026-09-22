@@ -1,0 +1,93 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f1ea;
+    color: #29261f;
+}
+
+header {
+    background: #334e68;
+    color: white;
+    padding: 18px 32px;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+main {
+    width: min(90%, 700px);
+    margin: 60px auto;
+}
+
+.card {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+    margin-top: 0;
+    color: #334e68;
+}
+
+p {
+    line-height: 1.6;
+}
+
+.button,
+button {
+    display: inline-block;
+    border: none;
+    border-radius: 7px;
+    padding: 11px 20px;
+    margin: 8px 6px 0 0;
+    background: #334e68;
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.button.secondary {
+    background: #829ab1;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+input {
+    padding: 11px;
+    border: 1px solid #bcccdc;
+    border-radius: 6px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.books {
+    margin-top: 25px;
+}
+
+.book {
+    padding: 16px 0;
+    border-bottom: 1px solid #d9e2ec;
+}
+
+.book h2 {
+    margin: 0 0 5px;
+    font-size: 1.1rem;
+}
+
+.book p {
+    margin: 0;
+    color: #627d98;
+}
