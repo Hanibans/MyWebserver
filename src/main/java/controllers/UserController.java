@@ -3,8 +3,6 @@ package controllers;
 import entities.User;
 import io.javalin.config.JavalinConfig;
 import io.javalin.http.Context;
-import io.javalin.http.HttpStatus;
-import org.jetbrains.annotations.NotNull;
 import services.UserService;
 
 

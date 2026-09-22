@@ -2,7 +2,6 @@ package services;
 
 import entities.User;
 import factories.UserFactory;
-
 import java.util.List;
 
 public class UserService {
