@@ -48,7 +48,7 @@ public class UserController {
 
         User user = userService.login(username, password);
         if(user != null){
-            ctx.attribute("username", user.getUsername());
+            ctx.sessionAttribute("user", user);
             ctx.render("welcome");
         }
         else{
