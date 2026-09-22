@@ -1,4 +1,5 @@
 package configuration;
+
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
 
