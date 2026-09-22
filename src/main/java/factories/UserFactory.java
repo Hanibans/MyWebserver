@@ -22,6 +22,8 @@ public class UserFactory {
         users.add(new User("user9", "password9"));
         users.add(new User("user10", "password10"));
 
+        users.add(new User("user11", "password11", true));
+
         return users;
     }
 }

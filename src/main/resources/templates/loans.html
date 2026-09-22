@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <title>Mine lån</title>
+</head>
+<body>
+
+<div class="books">
+
+    <div class="book" th:each="loan : ${session.user.loans}">
+
+        <h2 th:text="${loan.book.title}">
+            Grapes of Wrath
+        </h2>
+
+        <p th:text="${loan.book.author.name}">
+            John Steinbeck
+        </p>
+
+    </div>
+
+</div>
+
+</body>
+</html>

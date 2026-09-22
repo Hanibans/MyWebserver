@@ -1,26 +1,23 @@
 package services;
 
+import entities.Library;
 import entities.User;
-import factories.UserFactory;
-
-import java.util.List;
 
 public class UserService {
 
-    private List<User> users;
+    private Library library = Library.getInstance();
 
     public UserService() {
-        users = UserFactory.createUsers();
 
     }
 
     public void addUser(User user) {
-        users.add(user);
+        library.addUser(user);
     }
 
     public User getUser(String username) {
 
-        for (User user : users) {
+        for (User user : library.getUsers()) {
             if (user.getUsername().equals(username)) {
                 return user;
             }

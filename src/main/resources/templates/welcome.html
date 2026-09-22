@@ -18,10 +18,20 @@
 
         <h1>
             Velkommen,
-            <span th:text="${username}">bruger</span>!
+            <span th:text="${session.user.username}">bruger</span>!
         </h1>
 
+        <a class="button" href="/myloans">Mine lån</a>
+
+        <div th:if="${session.user.isAdmin}">
+            <a class="button" href="/allusers.html.html">Alle brugere</a>
+            <a class="button" href="/allbooks.html.html">Alle bøger</a>
+            <a class="button" href="/findusers.html">Find bruger</a>
+            <a class="button" href="/findauthorsbooks.html.html">Find forfatters bøger</a>
+
+        </div>
     </div>
+
 </main>
 
 </body>

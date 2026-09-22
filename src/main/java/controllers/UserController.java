@@ -12,6 +12,7 @@ public class UserController {
         config.routes.post("/login", ctx -> login(ctx));
         config.routes.get("/finduser", ctx -> findUser(ctx));
         config.routes.post("/createuser", ctx -> createUser(ctx));
+        config.routes.get("/myloans", ctx -> ctx.render("loans"));
     }
 
     public static void createUser(Context ctx){
@@ -20,7 +21,7 @@ public class UserController {
 
         User user = userService.createUser(username, password);
         if(user != null){
-            ctx.attribute("username", user.getUsername());
+            ctx.sessionAttribute("user", user);
             ctx.render("welcome");
         }
         else{

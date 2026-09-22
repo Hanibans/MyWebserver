@@ -7,12 +7,18 @@ public class User {
 
     private String username;
     private String password;
+    private boolean isAdmin;
     private List<Loan> loans;
 
 
-    public User(String username, String password){
+    public User(String username, String password) {
+        this(username, password, false);
+    }
+
+    public User(String username, String password, boolean isAdmin) {
         this.username = username;
         this.password = password;
+        this.isAdmin = isAdmin;
         this.loans = new ArrayList<>();
     }
 
@@ -22,6 +28,10 @@ public class User {
 
     public String getPassword() {
         return password;
+    }
+
+    public boolean isAdmin() {
+        return isAdmin;
     }
 
     public List<Loan> getLoans() {
