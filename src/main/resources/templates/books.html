@@ -1,33 +1,40 @@
 <!DOCTYPE html>
-<html lang="da">
-
+<html lang="da" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Alle bøger</title>
 </head>
-
 <body>
 
-<h1>Admin - Alle bøger</h1>
+<div class="books">
 
-<table>
-    <thead>
-    <tr>
-        <th>Titel</th>
-        <th>Forfatter</th>
-        <th>ISBN</th>
-    </tr>
-    </thead>
+        <table>
+            <thead>
+            <tr>
+                <th>Titel</th>
+                <th>Forfatter</th>
+            </tr>
+            </thead>
 
-    <tbody>
-    <tr th:each="book : ${books}">
-        <td th:text="${book.title}">title</td>
-        <td th:text="${book.author.name}">author</td>
-        <td th:text="${book.isbn}">isbn</td>
-    </tr>
-    </tbody>
-</table>
+            <tbody>
+            <tr th:each="book : ${books}">
+                <td th:text="${book.title}">Titel</td>
+                <td th:text="${book.author.name}">Forfatter</td>
+                <td>
+                    <form action="/cart/add" method="post">
+                        <input type="hidden"
+                               name="isbn"
+                               th:value="${book.isbn}">
+                        <button type="submit">Lån</button>
+                    </form>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+</div>
 
 </body>
-
 </html>

@@ -9,6 +9,7 @@ public class User {
     private String password;
     private boolean isAdmin;
     private List<Loan> loans;
+    private List<Book> cart;
 
 
     public User(String username, String password) {
@@ -20,6 +21,14 @@ public class User {
         this.password = password;
         this.isAdmin = isAdmin;
         this.loans = new ArrayList<>();
+    }
+
+    public void addToCart(Book book) {
+        cart.add(book);
+    }
+
+    public void clearCart() {
+        cart = new ArrayList<>();
     }
 
     public String getUsername() {
