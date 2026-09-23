@@ -1,10 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
+
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Alle bøger</title>
 </head>
+
 <body>
 
+<h1>Admin - Alle bøger</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>Titel</th>
+        <th>Forfatter</th>
+        <th>ISBN</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr th:each="book : ${books}">
+        <td th:text="${book.title}">title</td>
+        <td th:text="${book.author.name}">author</td>
+        <td th:text="${book.isbn}">isbn</td>
+    </tr>
+    </tbody>
+</table>
+
 </body>
+
 </html>

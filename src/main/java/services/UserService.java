@@ -1,5 +1,6 @@
 package services;
 
+import entities.Book;
 import entities.Library;
 import entities.User;
 
@@ -69,5 +70,9 @@ public class UserService {
 
     public List<User> getAllUsers() {
         return library.getUsers();
+    }
+
+    public List<Book> getAllBooks() {
+        return library.getBooks();
     }
 }
