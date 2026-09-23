@@ -3,6 +3,8 @@ package services;
 import entities.Library;
 import entities.User;
 
+import java.util.List;
+
 public class UserService {
 
     private Library library = Library.getInstance();
@@ -63,5 +65,9 @@ public class UserService {
             return false;
         else
             return true;
+    }
+
+    public List<User> getAllUsers() {
+        return library.getUsers();
     }
 }

@@ -5,6 +5,8 @@ import io.javalin.config.JavalinConfig;
 import io.javalin.http.Context;
 import services.UserService;
 
+import java.util.List;
+
 public class UserController {
     static UserService userService = new UserService();
 
@@ -13,6 +15,11 @@ public class UserController {
         config.routes.get("/finduser", ctx -> findUser(ctx));
         config.routes.post("/createuser", ctx -> createUser(ctx));
         config.routes.get("/myloans", ctx -> ctx.render("loans"));
+        config.routes.get("/users", ctx -> {
+            List<User> users = userService.getAllUsers();
+            ctx.attribute("users", users);
+            ctx.render("users");
+        });
     }
 
     public static void createUser(Context ctx){
