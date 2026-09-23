@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Alle brugere</title>
+</head>
+
+<body>
+
+<h1>Admin - Alle brugere</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>Brugernavn</th>
+        <th>Admin</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr th:each="user : ${users}">
+        <td th:text="${user.username}">Sally</td>
+        <td th:text="${user.isAdmin}">false</td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+
+</html>
