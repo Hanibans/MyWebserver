@@ -14,6 +14,7 @@ public class UserController {
     public static void setRoutes(JavalinConfig config){
         config.routes.post("/login", ctx -> login(ctx));
         config.routes.get("/finduser", ctx -> findUser(ctx));
+        config.routes.get("/booksbyauthor", ctx -> booksByAuthor(ctx));
         config.routes.post("/createuser", ctx -> createUser(ctx));
         config.routes.get("/myloans", ctx -> ctx.render("loans"));
 
@@ -55,6 +56,10 @@ public class UserController {
             ctx.status(404);
             ctx.result("Brugeren findes ikke");
         }
+    }
+
+    public static void booksByAuthor(Context ctx) {
+        String author = ctx.queryParam("author");
     }
 
     public static void login(Context ctx){
