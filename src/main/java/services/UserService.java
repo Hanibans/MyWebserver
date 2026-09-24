@@ -3,6 +3,7 @@ package services;
 import entities.Book;
 import entities.Library;
 import entities.User;
+import exceptions.IllegalUserDataException;
 
 import java.util.List;
 
@@ -40,14 +41,14 @@ public class UserService {
         return null;
     }
 
-    public User createUser(String username, String password) {
+    public User createUser(String username, String password) throws IllegalUserDataException {
 
         if (username == null || username.isBlank()) {
-            return null;
+            throw new IllegalUserDataException("Brugernavn må ikke være tomt eller blankt");
         }
 
         if (password == null || password.isBlank() || !validatePassword(password)) {
-            return null;
+            throw new IllegalUserDataException("Password må ikke være tomt eller blankt");
         }
 
 
@@ -61,7 +62,7 @@ public class UserService {
         return user;
     }
 
-    private boolean validatePassword(String psw){
+    boolean validatePassword(String psw){
         if (psw.length() < 8 || psw.length() > 15)
             return false;
         else

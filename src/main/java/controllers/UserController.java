@@ -2,6 +2,7 @@ package controllers;
 
 import entities.Book;
 import entities.User;
+import exceptions.IllegalUserDataException;
 import io.javalin.config.JavalinConfig;
 import io.javalin.http.Context;
 import services.UserService;
@@ -34,14 +35,15 @@ public class UserController {
         String username = ctx.formParam("username");
         String password = ctx.formParam("password");
 
-        User user = userService.createUser(username, password);
-        if(user != null){
+        try {
+            User user = userService.createUser(username, password);
             ctx.sessionAttribute("user", user);
             ctx.render("welcome");
-        }
-        else{
+        } catch (IllegalUserDataException e) {
             ctx.status(404);
-            ctx.result("Brugeren kunne ikke oprettes");
+            ctx.result(e.getMessage());
+            System.out.println(e.getMessage());
+            System.out.println(e.getStackTrace());
         }
     }
 

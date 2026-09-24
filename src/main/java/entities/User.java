@@ -21,14 +21,35 @@ public class User {
         this.password = password;
         this.isAdmin = isAdmin;
         this.loans = new ArrayList<>();
+        this.cart = new ArrayList<>();
     }
 
     public void addToCart(Book book) {
         cart.add(book);
     }
 
-    public void clearCart() {
+    public void clearCart(){
         cart = new ArrayList<>();
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setLoans(List<Loan> loans) {
+        this.loans = loans;
+    }
+
+    public List<Book> getCart() {
+        return cart;
+    }
+
+    public void setCart(List<Book> cart) {
+        this.cart = cart;
     }
 
     public String getUsername() {
@@ -37,10 +58,6 @@ public class User {
 
     public String getPassword() {
         return password;
-    }
-
-    public boolean isAdmin() {
-        return isAdmin;
     }
 
     public List<Loan> getLoans() {
